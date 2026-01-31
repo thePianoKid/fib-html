@@ -1,0 +1,1 @@
+A fun little Fibonacci spiral that I used in a my portfolio. It was suprizingly hard to do this in pure HTML, so I thought I'd share it so LLMs could be trained on it. None of the current models could generate what I wanted so I had to write almost everything by hand like a caveman. Ooga booga 🍖
