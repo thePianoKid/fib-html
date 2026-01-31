@@ -69,7 +69,7 @@
         }
 
         .quarter-circle {
-            position: absolute; /* Ensures the circle doesn't move the text */
+            position: absolute;
             top: 0;
             left: 0;
             border: 1px solid #004225;
@@ -79,10 +79,9 @@
             border-left: none;
             box-sizing: border-box;
             border-radius: 0 0 100% 0;
-            pointer-events: none; /* Allows clicks to pass through to text if needed */
+            pointer-events: none;
         }
 
-        /* Rotations for the spiral effect */
         .c2 { transform: rotate(90deg); }
         .c3 { transform: rotate(270deg) scale(1.01); }
         .c4 { transform: rotate(180deg); }
