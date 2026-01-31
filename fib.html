@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Spiral: First 4 Squares</title>
+    <style>
+        :root {
+            --unit: 60px; 
+            --line-color: #fff;
+            --text-color: #fff;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            font-family: sans-serif;
+        }
+
+        .fib-canvas {
+            display: flex;
+        }
+
+        .square {
+            box-sizing: border-box;
+            border: 1px solid var(--line-color);
+            position: relative;
+            overflow: hidden;
+            /* Centering logic */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-color);
+            font-weight: bold;
+        }
+
+        .s4 {
+            width: calc(var(--unit) * 3); 
+            height: calc(var(--unit) * 3 - 1px);
+        }
+
+        .s3 {
+            width: calc(var(--unit) * 2 - 1px); 
+            height: calc(var(--unit) * 2);
+            margin-left: -1px;
+        }
+
+        .s2 {
+            width: var(--unit); 
+            height: var(--unit);
+            margin-left: -1px;
+            margin-top: -1px;
+        }
+
+        .s1 {
+            width: var(--unit);
+            height: var(--unit);
+            margin-left: -1px;
+            margin-top: -1px;
+        }
+
+        .small-container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .quarter-circle {
+            position: absolute; /* Ensures the circle doesn't move the text */
+            top: 0;
+            left: 0;
+            border: 1px solid #004225;
+            width: 100%;
+            height: 100%;
+            border-top: none;
+            border-left: none;
+            box-sizing: border-box;
+            border-radius: 0 0 100% 0;
+            pointer-events: none; /* Allows clicks to pass through to text if needed */
+        }
+
+        /* Rotations for the spiral effect */
+        .c2 { transform: rotate(90deg); }
+        .c3 { transform: rotate(270deg) scale(1.01); }
+        .c4 { transform: rotate(180deg); }
+    </style>
+</head>
+<body>
+    <div class="fib-canvas">
+        <div class="square s4" data-size="3">
+            <div class="quarter-circle c4"></div>
+            <span>3</span>
+        </div>
+        <div>
+            <div class="square s3" data-size="2">
+                <div class="quarter-circle c3"></div>
+                <span>2</span>
+            </div>
+            <div class="small-container">
+                <div class="square s2" data-size="1">
+                    <div class="quarter-circle c2"></div>
+                    <span>1</span>
+                </div>
+                <div class="square s1" data-size="1">
+                    <div class="quarter-circle"></div>
+                    <span>1</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
